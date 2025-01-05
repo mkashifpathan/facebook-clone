@@ -108,13 +108,14 @@ nav .nav-left .search-box img {
 }
 
 .nav-middle .nav-links img {
-    width: 30px;
     filter: invert(1);
+    padding-bottom: 5px;
 }
 
 .nav-middle .nav-links a:first-child {
     border-bottom: 2px solid var(--link-color);
     border-radius: 10px 10px 0 0;
+    padding: 20px 0;
 }
 
 .nav-right {
@@ -1125,7 +1126,7 @@ nav .nav-left .logo .rsp-logo {
     }
 
     header {
-        height: 96px;
+        height: 94px;
 
         nav {
             flex-wrap: wrap;
@@ -1157,6 +1158,12 @@ nav .nav-left .logo .rsp-logo {
         transition: all .4s linear;
         border-radius: 0;
     }
+    
+    
+    .nav-middle .nav-links a:first-child {
+    padding: 2px;
+
+}
 
     nav .nav-middle .nav-links a:hover {
         border-bottom: 5px solid var(--secondary-color);
