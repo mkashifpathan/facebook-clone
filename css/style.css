@@ -13,7 +13,7 @@
     --bg-color: rgb(242, 242, 242);
     --contentBox-bg-color: white;
     --link-color: #0b76ea;
-    --text-color: rgb(71, 71, 71);
+    --text-color: rgb(160, 160, 160);
     --hover-color: #d2d2d2;
 }
 
@@ -23,7 +23,7 @@
     --bg-color: #000000;
     --contentBox-bg-color: rgb(36, 36, 36);
     --link-color: #0b76ea;
-    --text-color: rgb(213, 213, 213);
+    --text-color: rgb(218, 218, 218);
     --hover-color: #2d2d2d;
 }
 
@@ -32,8 +32,7 @@ img {
 }
 
 header {
-    background-color: var(--primary-color);
-    padding: 0 20px;
+    background-color: var(--secondary-color);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -49,9 +48,9 @@ header nav {
 .nav-left {
     display: flex;
     align-items: center;
-    gap: 10px;
-    width: 32%;
-    padding: 0 4.5%;
+    gap: 5px;
+    width: 25%;
+    padding: 0 4.5% 0 1%;
     justify-content: flex-start;
 }
 
@@ -65,11 +64,11 @@ header nav {
 .nav-left .search-box {
     display: flex;
     align-items: center;
-    background-color: var(--secondary-color);
+    background-color: var(--contentBox-bg-color);
     border-radius: 20px;
     padding: 0 10px;
     overflow: hidden;
-    width: 80%;
+    width: 100%;
 }
 
 .nav-left .search-box input {
@@ -81,11 +80,11 @@ header nav {
 }
 
 nav .nav-left .search-box img {
-    width: 15px;
+    width: 25px;
 }
 
 .nav-middle {
-    width: 32%;
+    width: 48%;
     padding: 0 4.5%;
 }
 
@@ -93,32 +92,47 @@ nav .nav-left .search-box img {
     display: flex;
     align-items: center;
     line-height: 3px;
-    justify-content: space-between;
+}
+
+.nav-middle .nav-links a {
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+    transition: all .4s linear;
+}
+
+.nav-middle .nav-links a:hover {
+    background-color: var(--hover-color);
 }
 
 .nav-middle .nav-links img {
     width: 30px;
+    filter: invert(1);
 }
 
-/* nav .nav-left img {
-    width: 20px;
-} */
+.nav-middle .nav-links a:first-child {
+    border-bottom: 2px solid var(--link-color);
+    border-radius: 10px 10px 0 0;
+}
 
 .nav-right {
     display: flex;
     align-items: center;
     gap: 10px;
-    width: 32%;
-    padding: 0 4.5%;
+    width: 25%;
+    padding: 0 1%;
     justify-content: flex-end;
 }
 
 .nav-right .find-friends {
-    background-color: var(--secondary-color);
-    padding: 5px;
+    background-color: var(--contentBox-bg-color);
+    padding: 5px 10px;
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
+    transition: all .4s linear;
 }
 
 
@@ -126,6 +140,7 @@ nav .nav-left .search-box img {
     opacity: 0.7;
 }
 
+.nav-right .menu,
 .nav-right .messenger,
 .nav-right .notification {
     background-color: var(--secondary-color);
@@ -136,9 +151,11 @@ nav .nav-left .search-box img {
     justify-content: center;
 }
 
+.nav-right .menu img,
 .nav-right .messenger img,
 .nav-right .notification img {
     padding-left: 1px;
+    filter: invert(1);
 }
 
 .nav-right .user-profile {
@@ -175,6 +192,7 @@ nav .user-settings-menu {
 
 .user-settings-menu .settings {
     padding: 10px;
+    width: 250px;
 }
 
 nav .user-settings-menu.height {
@@ -204,6 +222,18 @@ nav .user-settings-menu .settings .user-profile .user-name a {
 
 nav .user-settings-menu .settings-options {
     font-size: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: all .4s linear;
+}
+
+nav .user-settings-menu .settings-options:hover {
+    background-color: var(--hover-color);
+}
+
+nav .user-settings-menu .settings-options i {
+    filter: invert(1);
 }
 
 nav .user-settings-menu .settings-options:nth-child(1) {
@@ -211,10 +241,6 @@ nav .user-settings-menu .settings-options:nth-child(1) {
     padding-bottom: 5px;
 }
 
-nav .user-settings-menu .settings-options:nth-child(2) {
-    border-bottom: 1px solid gainsboro;
-    padding-bottom: 5px;
-}
 
 nav .user-settings-menu .settings-options a {
     text-decoration: none;
@@ -252,18 +278,22 @@ nav .user-settings-menu .settings-options a {
 #main {
     display: flex;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 0 2%;
     background-color: var(--bg-color);
 }
 
 .main-left-sidebar,
 .main-right-sidebar {
     height: calc(100vh - 70px);
-    width: 25%;
+    width: 20%;
     overflow-y: auto;
     position: sticky;
     top: 70px;
     padding: 20px 0;
+}
+
+.main-right-sidebar {
+    width: 27%;
 }
 
 .main-left-sidebar::-webkit-scrollbar,
@@ -290,8 +320,21 @@ nav .user-settings-menu .settings-options a {
     gap: 5px;
     text-decoration: none;
     margin-bottom: 10px;
-    padding: 5px 10px;
+    padding: 10px 0;
     border-radius: 7px;
+    align-items: center;
+    font-weight: bold;
+    transition: all .4s linear;
+}
+
+.main-left-sidebar .left-sidebar-links nav ul li a span {
+    background-color: var(--contentBox-bg-color);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.main-left-sidebar .left-sidebar-links nav ul li a span img:last-child {
+    filter: invert(1);
 }
 
 .main-left-sidebar .left-sidebar-links nav ul li a:hover {
@@ -299,14 +342,6 @@ nav .user-settings-menu .settings-options a {
     ;
 }
 
-.main-left-sidebar .left-sidebar-links nav ul li a img {
-    width: 20px;
-}
-
-.main-left-sidebar .left-sidebar-links nav .see-more {
-    text-decoration: none;
-    font-weight: 600;
-}
 
 .main-left-sidebar .left-sidebar-shortcuts {
     margin-top: 20px;
@@ -324,6 +359,7 @@ nav .user-settings-menu .settings-options a {
     font-size: 14px;
     padding: 5px;
     border-radius: 10px;
+    transition: all .4s linear;
 }
 
 .main-left-sidebar .left-sidebar-shortcuts .shortcuts a:hover {
@@ -340,7 +376,7 @@ nav .user-settings-menu .settings-options a {
 
 .main-container {
     height: calc(100vh - 70px);
-    width: 46%;
+    width: 50%;
     overflow-y: auto;
     position: sticky;
     top: 70px;
@@ -368,18 +404,23 @@ nav .user-settings-menu .settings-options a {
     border-radius: 8px;
     cursor: pointer;
 }
+
 .story-container .story:nth-child(2) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../assets/images/user2.jpg");
 }
+
 .story-container .story:nth-child(3) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../assets/images/user3.jpg");
 }
+
 .story-container .story:nth-child(4) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../assets/images/user4.jpg");
 }
+
 .story-container .story:nth-child(5) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("../assets/images/user5.jpg");
 }
+
 .story-container .story:hover {
     opacity: 0.9;
     transform: scale(0.98);
@@ -392,8 +433,9 @@ nav .user-settings-menu .settings-options a {
     top: 5px;
     left: 5px;
     border-radius: 50%;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--link-color);
     object-fit: cover;
+    transition: all .4s linear;
 }
 
 .story-container .story img:hover {
@@ -411,8 +453,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .post-input-container {
-    background-color: var(--contentBox-bg-color);
-    ;
+    background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 10px;
 }
@@ -423,44 +464,56 @@ nav .user-settings-menu .settings-options a {
     color: rgb(91, 91, 91);
     gap: 10px;
     margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
 }
 
 .post-input-container .user-profile img {
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
-.write-post-container textarea {
-    resize: none;
+.post-input-container .user-profile input {
     width: 88%;
-    margin: 0 6%;
     border: none;
+    border-radius: 20px;
     outline: none;
-    border-bottom: 1px solid rgb(186, 186, 186);
-    background-color: transparent;
+    background-color: var(--contentBox-bg-color);
+    padding: 5px 10px;
+    font-size: 18px;
 }
 
 .post-input-container .post-types {
     display: flex;
     align-items: center;
-    gap: 5%;
-    width: 88%;
-    margin: 20px auto;
+    width: 100%;
 }
 
-.post-input-container .post-types a {
+.post-input-container .post-types div {
+    width: 100%;
+}
+
+.post-input-container .post-types div a {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 10px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: 500;
+    width: 100%;
+    padding: 5px 10px;
+    justify-content: center;
+    border-radius: 10px;
 }
 
-.post-input-container .post-types a img {
-    width: 15px;
+.post-input-container .post-types div a:hover {
+    background-color: var(--secondary-color);
+}
+
+.post-input-container .post-types div a img {
+    width: 25px;
 }
 
 .users-posts .user-post .post-title {
@@ -470,11 +523,12 @@ nav .user-settings-menu .settings-options a {
 }
 
 .users-posts .user-post {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
 }
+
 .users-posts .user-post:last-child {
     margin-bottom: 10px;
 }
@@ -488,11 +542,14 @@ nav .user-settings-menu .settings-options a {
 }
 
 .users-posts .user-post .post-title .user-name p:last-child {
-    color: rgb(48, 48, 48);
+    color: gray;
     font-size: 8px;
     font-weight: 500;
 }
 
+.users-posts .user-post .post-title .user-name p {
+    font-size: 14px;
+}
 .user-post .post-description {
     font-size: 12px;
     margin: 10px 0;
@@ -524,20 +581,57 @@ nav .user-settings-menu .settings-options a {
     display: flex;
     align-items: center;
     gap: 5px;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     margin-top: 5px;
-    padding: 5px;
+    padding: 5px 10px;
+    transition: all .4s linear;
+    filter: invert(1);
 }
 
 .user-post .reaction-row .like:hover {
     background-color: var(--hover-color);
 }
 
-.user-post .reaction-row .like img {
-    width: 20px;
+.user-post .reaction-row .like p {
+    filter: invert(1);
 }
 
+.right-sidebar-sponsored {
+    padding: 20px;
+    background-color: var(--contentBox-bg-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 0, 0);
+}
+
+.right-sidebar-sponsored .sponsored-card {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: all .4s linear;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.right-sidebar-sponsored .sponsored-card:hover {
+    background-color: var(--hover-color);
+}
+
+.right-sidebar-sponsored .sponsored-card img {
+    border-radius: 10px;
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+}
+
+.right-sidebar-sponsored .sponsored-card .info p {
+    color: var(--text-color);
+    font-size: 12px;
+    margin-top: 5px;
+}
 
 .right-sidebar-events .event-title {
     display: flex;
@@ -559,6 +653,7 @@ nav .user-settings-menu .settings-options a {
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
+    transition: all .4s linear;
 }
 
 .right-sidebar-events .event:hover {
@@ -567,7 +662,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .right-sidebar-events .event .event-date {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     ;
     border-radius: 5px;
     width: 45px;
@@ -642,6 +737,7 @@ nav .user-settings-menu .settings-options a {
     padding: 10px;
     border-radius: 10px;
     font-weight: 600;
+    transition: all .4s linear;
 }
 
 .right-sidebar-chats .chat:hover {
@@ -683,7 +779,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .cover-box {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     width: 100%;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -722,6 +818,7 @@ nav .user-settings-menu .settings-options a {
     outline: none;
     font-weight: 600;
 }
+
 .cover button img {
     height: 15px;
 }
@@ -831,7 +928,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .ad-left .user-details {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     padding: 10px;
     border-radius: 10px;
 }
@@ -849,7 +946,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .photos-box {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     margin: 10px 0;
     padding: 10px;
     border-radius: 10px;
@@ -901,7 +998,9 @@ nav .user-settings-menu .settings-options a {
     border-radius: 4px;
 }
 
-
+nav .nav-left .logo .rsp-logo {
+    display: none;
+}
 
 
 @media screen and (max-width: 1200px) {
@@ -920,6 +1019,10 @@ nav .user-settings-menu .settings-options a {
         padding: 0 2%;
     }
 
+    .nav-right .find-friends {
+        display: none;
+    }
+
     .cover-box .profile {
         padding: 0 2%;
     }
@@ -934,16 +1037,16 @@ nav .user-settings-menu .settings-options a {
 }
 
 @media screen and (max-width: 950px) {
+    #main {
+        padding-left: 0;
+    }
+
     .main-left-sidebar {
         display: none;
     }
 
     .main-container {
-        width: 74%;
-    }
-
-    .nav-right .find-friends {
-        display: none;
+        width: 65%;
     }
 
     .nav-left .search-box {
@@ -958,9 +1061,17 @@ nav .user-settings-menu .settings-options a {
     .nav-left .search-box input {
         display: none;
     }
+
+    .main-right-sidebar {
+        width: 33%;
+    }
 }
 
 @media screen and (max-width: 900px) {
+    #main {
+        padding: 0;
+    }
+
     .main-right-sidebar {
         display: none;
     }
@@ -969,7 +1080,7 @@ nav .user-settings-menu .settings-options a {
         width: 100%;
     }
 
-    .cover > img {
+    .cover>img {
         display: none;
     }
 
@@ -1012,14 +1123,28 @@ nav .user-settings-menu .settings-options a {
     #profile-page-main {
         padding: 0 1%;
     }
+
     header {
-        height: 100px;
+        height: 96px;
 
         nav {
             flex-wrap: wrap;
         }
     }
 
+    nav .nav-left .logo .lg-logo {
+        display: none;
+    }
+
+    nav .nav-left .logo .rsp-logo {
+        display: block;
+    }
+    
+    nav .nav-left .logo .rsp-logo img {
+        width: 150px;
+        position: relative;
+        top: 0px;
+    }
     nav .nav-middle {
         order: 3;
         width: 100%;
@@ -1029,6 +1154,8 @@ nav .user-settings-menu .settings-options a {
 
     nav .nav-middle .nav-links a {
         border-bottom: 5px solid var(--primary-color);
+        transition: all .4s linear;
+        border-radius: 0;
     }
 
     nav .nav-middle .nav-links a:hover {
@@ -1038,23 +1165,24 @@ nav .user-settings-menu .settings-options a {
     nav .nav-left {
         align-items: center;
         width: 80%;
+        justify-content: space-between;
+        padding: 10px;
     }
 
     .nav-left .search-box {
-        padding: 0;
-        padding-left: 10px;
+        padding: 5px;
         width: 90%;
-    }
-
-    nav .nav-left .search-box input {
-        display: block;
+        justify-content: flex-end;
+        width: fit-content;
+        align-items: center;
     }
 
     nav .nav-right {
-        width: 18%;
+        width: fit-content;
+        padding: 10px;
     }
 
-    .nav-right .messenger,
+    .nav-right .menu,
     .nav-right .notification {
         display: none;
     }
@@ -1076,6 +1204,7 @@ nav .user-settings-menu .settings-options a {
         justify-content: space-between;
         gap: 15px 0px;
     }
+
     .profile .profile-right button {
         font-size: 12px;
         width: 48%;
@@ -1086,9 +1215,14 @@ nav .user-settings-menu .settings-options a {
         order: 3;
         width: 100%;
     }
-    #main, .nav-left, nav .nav-middle, .nav-right {
+
+    #main,
+    .nav-left,
+    nav .nav-middle,
+    .nav-right {
         padding: 0;
     }
+
     .main-container {
         padding: 10px;
     }
@@ -1098,18 +1232,29 @@ nav .user-settings-menu .settings-options a {
     header {
         padding: 0 10px;
     }
+
+    nav .nav-left {
+        width: 70%;
+    }
+
     .story-container .story {
         height: 150px;
     }
+
     nav .nav-left .search-box {
         width: auto;
         padding: 5px;
     }
-    nav .nav-left .search-box input {
-        display: none;
-    }
+
     .main-container {
         padding: 0;
         margin-top: 10px;
+    }
+
+    .post-input-container .post-types div a {
+        font-size: 10px;
+    }
+    .post-input-container .post-types div a img {
+        width: 20px;
     }
 }
