@@ -404,6 +404,7 @@ nav .user-settings-menu .settings-options a {
     position: relative;
     border-radius: 8px;
     cursor: pointer;
+    transition: all .4s linear;
 }
 
 .story-container .story:nth-child(2) {
@@ -424,7 +425,7 @@ nav .user-settings-menu .settings-options a {
 
 .story-container .story:hover {
     opacity: 0.9;
-    transform: scale(0.98);
+    transform: scale(1.01);
 }
 
 .story-container .story img {
@@ -446,7 +447,7 @@ nav .user-settings-menu .settings-options a {
 .story-container .story p {
     position: absolute;
     bottom: 5px;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: 600;
     left: 50%;
     transform: translate(-50%);
@@ -454,7 +455,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .post-input-container {
-    background-color: var(--secondary-color);
+    background-color: var(--contentBox-bg-color);
     padding: 10px;
     border-radius: 10px;
 }
@@ -507,10 +508,11 @@ nav .user-settings-menu .settings-options a {
     padding: 5px 10px;
     justify-content: center;
     border-radius: 10px;
+    transition: all .3s linear;
 }
 
 .post-input-container .post-types div a:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--hover-color);
 }
 
 .post-input-container .post-types div a img {
@@ -524,7 +526,7 @@ nav .user-settings-menu .settings-options a {
 }
 
 .users-posts .user-post {
-    background-color: var(--secondary-color);
+    background-color: var(--contentBox-bg-color);
     padding: 10px;
     margin-top: 10px;
     border-radius: 10px;
@@ -582,21 +584,22 @@ nav .user-settings-menu .settings-options a {
     display: flex;
     align-items: center;
     gap: 5px;
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 5px;
-    padding: 5px 10px;
-    transition: all .4s linear;
-    filter: invert(1);
+    padding: 10px 20px;
+    transition: all .2s linear;
 }
 
 .user-post .reaction-row .like:hover {
     background-color: var(--hover-color);
 }
 
-.user-post .reaction-row .like p {
+.user-post .reaction-row .like i {
     filter: invert(1);
+
 }
+
 
 .right-sidebar-sponsored {
     padding: 20px;
@@ -1156,7 +1159,7 @@ nav .nav-left .logo .rsp-logo {
     nav .nav-middle .nav-links a {
         border-bottom: 5px solid var(--primary-color);
         transition: all .4s linear;
-        border-radius: 0;
+        border-radius: 10px 10px 0 0;
     }
     
     
