@@ -125,7 +125,7 @@ nav .nav-left .search-box img {
 }
 
 .nav-right .find-friends {
-    background-color: var(--contentBox-bg-color);
+    background-color: var(--secondary-color);
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: 600;
@@ -135,7 +135,7 @@ nav .nav-left .search-box img {
 
 
 .nav-right .find-friends:hover {
-    opacity: 0.7;
+    background-color: var(--hover-color);
 }
 
 .nav-right .menu,
@@ -147,15 +147,22 @@ nav .nav-left .search-box img {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all .4s linear;
+    cursor: pointer;
 }
 
 .nav-right .menu img,
 .nav-right .messenger img,
 .nav-right .notification img {
-    padding-left: 1px;
-    filter: invert(1);
+    padding: 5px;
+    width: 25px;
 }
 
+.nav-right .menu:hover,
+.nav-right .messenger:hover,
+.nav-right .notification:hover {
+    background-color: var(--hover-color);
+}
 .nav-right .user-profile {
     position: relative;
 }
@@ -841,6 +848,8 @@ nav .user-settings-menu .settings-options a {
     width: 150px;
     border-radius: 50%;
     margin-right: 20px;
+    border: 2px solid var(--text-color);
+    padding: 2px;
 }
 
 .profile .profile-left .change-profile-photo {
@@ -855,11 +864,13 @@ nav .user-settings-menu .settings-options a {
     border: 1px solid var(--bg-color);
 }
 
-.profile-left .change-profile-photo .camera {
-    width: 30px !important;
-    background-color: #000000;
-    padding: 3px;
+.profile .profile-left .change-profile-photo i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 
 .profile-left .account-name {
     display: flex;
@@ -903,6 +914,7 @@ nav .user-settings-menu .settings-options a {
     cursor: pointer;
     padding: 5px 10px;
     font-weight: 600;
+    transition: all .4s linear;
 }
 
 .profile-right button img {
@@ -916,6 +928,10 @@ nav .user-settings-menu .settings-options a {
 
 .profile-right button:first-child img {
     filter: invert(0);
+}
+
+.profile-right button:hover {
+    background-color: var(--hover-color);
 }
 
 .account-details {
@@ -944,6 +960,11 @@ nav .user-settings-menu .settings-options a {
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: 600;
+    transition: all .4s linear;
+}
+
+.ad-left .user-details .intro button:hover {
+    background-color: var(--hover-color);
 }
 
 .photos-box {

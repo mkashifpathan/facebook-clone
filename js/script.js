@@ -122,6 +122,7 @@ let userPosts = [
         send: 600,
         share: 3324,
     },
+    
 ];
 
 document.querySelector(".users-posts").innerHTML = userPosts.map(post => {
